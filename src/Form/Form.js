@@ -7,7 +7,7 @@ import './Form.css'
 const Form = () => {
 
     const [formData, setFormData] = useState({
-        bacteria: "",
+        bacteria: "acinetobacter baumannii",
         email_id: ""
     })
     const [err, setErr] = useState({
@@ -58,10 +58,10 @@ const Form = () => {
     return (
         !resultsRecieved.recieved
             ? <div className="main-block" >
-                <h1><b>TailScout Registration</b></h1>
+                <h1><b>Enter input parameters:</b></h1>
                 <form action="/" onSubmit={submitForm}>
                     <label id="icon" for="name"><i className="fas fa-bacterium"></i></label>
-                    <input
+                    {/* <input
                         type="text"
                         name="bacteria"
                         value={formData.bacteria}
@@ -69,7 +69,22 @@ const Form = () => {
                         id="bacteria"
                         placeholder="Bacteria Name"
                         required
-                    />
+                    /> */}
+                    <select
+                        type="text"
+                        id="bacteria"
+                        name="bacteria"
+                        value={formData.bacteria}
+                        onChange={updateFormData}
+                        placeholder="Bacteria Name"
+                        required
+                    >
+                        <option value="acinetobacter baumannii" selected>Acinetobacter baumannii</option>
+                        <option value="klebsiella pnuemoniae">Klebsiella pnuemoniae</option>
+                        <option value="escherichia coli">Escherichia coli</option>
+                        <option value="campylobacter jejuni">Campylobacter jejuni</option>
+                    </select>
+                    <br />
                     <label id="icon" for="name"><i className="fas fa-envelope"></i></label>
                     <input
                         type="text"
@@ -80,8 +95,9 @@ const Form = () => {
                         placeholder="Email ID"
                         required
                     />
+                    <br />
                     <div className="btn-block">
-                        <button type="submit" href="/">
+                        <button type="submit" href="/" disabled={loading}>
                             {
                                 loading
                                     ? "Loading"
