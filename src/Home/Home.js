@@ -28,7 +28,7 @@ const Home = () => {
                                     <i class="fas fa-bacterium"></i> Start Modelling
                                 </button>
                             </Link>
-                            <a href="https://github.com/TEAM-IGEM-IIT-ROORKEE/tailscout">
+                            <a href="https://github.com/igemsoftware2020/IIT_Roorkee_India">
                                 <button type="button" class="btn btn-success btn-lg">
                                     <i class="fab fa-github"></i> Contribute
                                 </button>
